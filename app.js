@@ -35,12 +35,13 @@ request({url:url,json:true},(error,response)=>{
     */
 })
 const url1 ='https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?access_token=pk.eyJ1IjoibWFuanVuYXRoYXBhdGthciIsImEiOiJja2t0NzU5cDUwa2lrMnFwNjlldmR0Ymc4In0.T3OhyQ0q1bG_IWYsd2mpxg'
+//const url1 = 'https://api.mapbox.com/geocoding/v5/mapbox.places/fbhdskjnlms.json?access_token=pk.eyJ1IjoibWFuanVuYXRoYXBhdGthciIsImEiOiJja2t0NzU5cDUwa2lrMnFwNjlldmR0Ymc4In0.T3OhyQ0q1bG_IWYsd2mpxg'
 request({ url: url1, json: true }, (err,response)=>{
     // console.log(response)
     if (err){
         console.log("unable to connect to the mapbox api")
     }
-    else if(response.body.message){
+    else if(response.body.features.length==0){
         console.log("please check the entered place name")
     }
     else {
@@ -48,5 +49,4 @@ request({ url: url1, json: true }, (err,response)=>{
         console.log("latitude " + res.features[0].center[0])
         console.log("longitude " + res.features[0].center[1])
     }
-    
 })
