@@ -1,14 +1,15 @@
 //weather app code
-const request=require('request')
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
-forecast(13.33222, 74.74611,(error,data)=>{
-    console.log(error)
-    console.log(data)
+
+geocode('udupi',(err,data)=>{
+    if (err){
+        return console.log(err)
+    }
+    forecast(data.latitude, data.longitude, (error, forecastdata) => {
+        if(error){
+            return console.log(error)
+        }
+        console.log("The minimum and maximum temperature of "+data.place+" is "+forecastdata.minTemp+" and "+forecastdata.maxTemp)
+    })
 })
-
-// geocode('nitte',(err,data)=>{
-//     console.log(err)
-//     console.log(data)
-
-// })
