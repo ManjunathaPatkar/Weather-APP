@@ -2,8 +2,8 @@
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 
-
-geocode(process.argv[2],(err,data)=>{
+const address=process.argv[2]
+geocode(address,(err,data)=>{
     if (err){
         return console.log(err)
     }
