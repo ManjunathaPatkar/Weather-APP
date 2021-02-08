@@ -14,6 +14,7 @@ app.get('/about',(req,res)=>{
 app.get('/weather',(req,res)=>{
     res.send('Weather page')
 })
+
 app.listen(3000,()=>{
     console.log("server started.....")
 })
