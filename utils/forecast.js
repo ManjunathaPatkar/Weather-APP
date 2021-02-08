@@ -1,6 +1,6 @@
 const request=require('request')
 
-const temperature = (latitude, longitude, callback) => {
+const forecast = (latitude, longitude, callback) => {
     const url = 'http://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=SDhu1AbAnfwcdEeo9m1y67jA3p1AqXXX&q=' + encodeURIComponent(latitude) + '%2C' + encodeURIComponent(longitude)
     request({ url: url, json: true }, (error, response) => {
         if (error) {
@@ -21,4 +21,4 @@ const temperature = (latitude, longitude, callback) => {
         }
     })
 }
-module.exports=temperature
+module.exports=forecast
