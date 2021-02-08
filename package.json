@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/ManjunathaPatkar/Weather-APP#readme",
   "dependencies": {
-    "request": "^2.88.2",
-    "yargs": "^16.2.0"
+    "request": "^2.88.2"
   }
 }
