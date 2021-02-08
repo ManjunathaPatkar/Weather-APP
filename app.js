@@ -2,7 +2,8 @@
 const geocode=require('./utils/geocode')
 const forecast=require('./utils/forecast')
 
-geocode('udupi',(err,data)=>{
+
+geocode(process.argv[2],(err,data)=>{
     if (err){
         return console.log(err)
     }
