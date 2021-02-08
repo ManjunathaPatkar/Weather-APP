@@ -1,5 +1,7 @@
+const path = require('path')
 const express = require('express')
 
+console.log(path.join(__dirname,'../public'))
 const app=express()
 
 app.get('',(req,res)=>{
