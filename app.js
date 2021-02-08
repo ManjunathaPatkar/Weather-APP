@@ -8,15 +8,15 @@ if(address===undefined){
     console.log("Please provide an address")
 }
 else{
-    geocode(address, (err, data) => {
+    geocode(address, (err, {latitude,longitude,place}) => {
         if (err) {
             return console.log(err)
         }
-        forecast(data.latitude, data.longitude, (error, forecastdata) => {
+        forecast(latitude, longitude, (error, {minTemp,maxTemp}) => {
             if (error) {
                 return console.log(error)
             }
-            console.log("The minimum and maximum temperature of " + data.place + " is " + forecastdata.minTemp + " and " + forecastdata.maxTemp)
+            console.log("The minimum and maximum temperature of " + place + " is " + minTemp + " and " + maxTemp)
         })
     })
 }
