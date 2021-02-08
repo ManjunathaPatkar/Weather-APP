@@ -6,7 +6,7 @@ app.get('',(req,res)=>{
     res.send('<h1>Weather </h1>')
 })
 app.get('/help',(req,res)=>{
-    res.send('Help page')
+    res.send('<h1>Help page</h1>')
 })
 app.get('/about',(req,res)=>{
     res.send('About page')
