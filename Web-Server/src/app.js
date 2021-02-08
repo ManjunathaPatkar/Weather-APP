@@ -11,13 +11,13 @@ app.use(express.static(publicDirpath))
 app.get('',(req,res)=>{
     res.send('<h1>Weather </h1>')
 })
-app.get('/help',(req,res)=>{
+app.get('',(req,res)=>{
     res.send({
         name:'manja',
         age:21
     })
 })
-app.get('/about',(req,res)=>{
+app.get('',(req,res)=>{
     res.send('<h1>About page</h1>')
 })
 app.get('/weather',(req,res)=>{
