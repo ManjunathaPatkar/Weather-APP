@@ -9,7 +9,7 @@ const app=express()
 const publicDirpath = path.join(__dirname, '../public')
 app.set('view engine', 'hbs') 
 
-const viewspath=path.join(__dirname,'../templates')
+const viewspath=path.join(__dirname,'../templates/views')
 app.set('views',viewspath)
 // app.set('views', path.join(__dirname, '../views'));
 
