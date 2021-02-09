@@ -26,13 +26,17 @@ app.get('',(req,res)=>{
 
 app.get('/about',(req,res)=>{
     res.render('about',{
-        name:'About Page'
+        text:'some helpfull text',
+        title:'About page',
+        name:'Manjunatha'
     })
 })
 
 app.get('/help',(req,res)=>{
     res.render('help',{
-        title:'help page'
+        forecase:'Its snowing here',
+        title:'help page',
+        name:'manju'
     })
 })
 
