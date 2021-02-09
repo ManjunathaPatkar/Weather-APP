@@ -48,11 +48,15 @@ app.get('/weather',(req,res)=>{
 })
 
 app.get('/help/*',(req,res)=>{
-    res.send("help article not found")
+    res.render('404',{
+        text:'Help article not found'
+    })
 })
 
 app.get('*',(req,res)=>{
-    res.send("404 not found")
+    res.render('404',{
+        title:'Page not found'
+    })
 })
 
 app.listen(3000,()=>{
