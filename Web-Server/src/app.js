@@ -10,7 +10,9 @@ const app=express()
 const publicDirpath = path.join(__dirname, '../public')
 app.set('view engine', 'hbs') 
 
-app.set('views', path.join(__dirname, '../views'));
+const viewspath=path.join(__dirname,'../templates')
+app.set('views',viewspath)
+// app.set('views', path.join(__dirname, '../views'));
 
 app.use(express.static(publicDirpath))
 
