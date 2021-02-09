@@ -11,17 +11,9 @@ const publicDirpath = path.join(__dirname, '../public')
 app.use(express.static(publicDirpath))
 
 app.get('',(req,res)=>{
-    res.send('<h1>Weather </h1>')
+    res.render('index')
 })
-app.get('',(req,res)=>{
-    res.send({
-        name:'manja',
-        age:21
-    })
-})
-app.get('',(req,res)=>{
-    res.send('<h1>About page</h1>')
-})
+
 app.get('/weather',(req,res)=>{
     res.send({
         forecast:'It is snowing',
