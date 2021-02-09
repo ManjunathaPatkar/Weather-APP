@@ -21,6 +21,12 @@ app.get('',(req,res)=>{
     })
 })
 
+app.get('/about',(req,res)=>{
+    res.render('about',{
+        name:'About Page'
+    })
+})
+
 app.get('/weather',(req,res)=>{
     res.send({
         forecast:'It is snowing',
