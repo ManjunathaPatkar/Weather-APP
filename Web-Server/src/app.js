@@ -5,8 +5,6 @@ const express = require('express')
 
 const app=express()
 
-
-
 const publicDirpath = path.join(__dirname, '../public')
 app.set('view engine', 'hbs') 
 
