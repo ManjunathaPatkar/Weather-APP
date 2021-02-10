@@ -15,6 +15,9 @@ weatherform.addEventListener('submit',(e)=>{
                 // console.log(data.error)
                 message1.textContent=data.error;
             }
+            else if(data.minTemp===undefined){
+                message1.textContent="Please enter a valid address!"
+            }
             else {
                 console.log(data)
                 message1.textContent = ''
