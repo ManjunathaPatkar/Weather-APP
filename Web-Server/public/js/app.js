@@ -13,5 +13,5 @@ weatherform.addEventListener('submit',(e)=>{
                 console.log(data)
             }
         })
-    })
+    }) 
 })
