@@ -8,3 +8,9 @@ fetch('http://localhost:3000/weather?address=hdbnfjsdlm').then((response)=>{
         }
     })
 })
+
+const weatherform=document.querySelector('form')
+
+weatherform.addEventListener('submit',()=>{
+    console.log('testing!!!')
+})
