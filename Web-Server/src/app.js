@@ -51,11 +51,11 @@ app.get('/weather',(req,res)=>{
     }
     geocode(req.query.address, (err, { latitude, longitude, place }) => {
         if (err) {
-            return console.log(err)
+            return res.send({err})
         }
         forecast(latitude, longitude, (error, { minTemp, maxTemp }) => {
             if (error) {
-                return console.log(error)
+                return res.send({err})
             }
             res.send({
                 forecast: 'It is snowing',
