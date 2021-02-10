@@ -41,9 +41,16 @@ app.get('/help',(req,res)=>{
 })
 
 app.get('/weather',(req,res)=>{
+
+    if(!req.query.address){
+        return res.send({
+            error:"Please add address"
+        })
+    }
+
     res.send({
         forecast:'It is snowing',
-        location:'Udupi karnataka'
+        location:req.query.address
     })
 })
 
