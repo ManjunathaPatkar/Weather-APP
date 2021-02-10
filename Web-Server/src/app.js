@@ -49,11 +49,11 @@ app.get('/weather',(req,res)=>{
             error:"Please add address"
         })
     }
-    geocode(req.query.address, (err, { latitude, longitude, place }) => {
+    geocode(req.query.address, (err, { latitude, longitude, place }={}) => {
         if (err) {
             return res.send({err})
         }
-        forecast(latitude, longitude, (error, { minTemp, maxTemp }) => {
+        forecast(latitude, longitude, (error, { minTemp, maxTemp }={}) => {
             if (error) {
                 return res.send({err})
             }
@@ -64,7 +64,7 @@ app.get('/weather',(req,res)=>{
                 maxTemp,
                 place
             })
-            console.log("The minimum and maximum temperature of " + place + " is " + minTemp + " and " + maxTemp)
+            //console.log("The minimum and maximum temperature of " + place + " is " + minTemp + " and " + maxTemp)
         })
     })
 
