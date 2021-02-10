@@ -1,6 +1,8 @@
 const path = require('path')
 const express = require('express')
 const hbs=require('hbs')
+const geocode=require('../src/utils/geocode')
+const forecast=require('../src/utils/forecast')
 
 //console.log(path.join(__dirname,'../public'))
 
@@ -47,6 +49,17 @@ app.get('/weather',(req,res)=>{
             error:"Please add address"
         })
     }
+    geocode(address, (err, { latitude, longitude, place }) => {
+        if (err) {
+            return console.log(err)
+        }
+        forecast(latitude, longitude, (error, { minTemp, maxTemp }) => {
+            if (error) {
+                return console.log(error)
+            }
+            console.log("The minimum and maximum temperature of " + place + " is " + minTemp + " and " + maxTemp)
+        })
+    })
 
     res.send({
         forecast:'It is snowing',
