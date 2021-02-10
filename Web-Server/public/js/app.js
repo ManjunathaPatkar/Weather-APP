@@ -5,7 +5,6 @@ fetch('http://localhost:3000/weather?address=hdbnfjsdlm').then((response)=>{
         }
         else {
             console.log(data) 
-            }
-        
+        }
     })
 })
