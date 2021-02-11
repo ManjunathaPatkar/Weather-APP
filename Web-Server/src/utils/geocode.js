@@ -6,7 +6,7 @@ const geocode = (address, callback) => {
         if (err) {
             callback('unable to connect to Mapbox API', undefined)
         }
-        else if (body.features.length===0) {
+        else if (body.features.length===0){
             callback('Please enter valid place name', undefined)
         }
         else {
